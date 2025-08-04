@@ -1,0 +1,28 @@
+.card-body.even {
+  background-color: #080808a1 !important; /* Example background color */
+  -webkit-text-fill-color: white !important;
+  font-weight: 500 !important;
+  border: 1px solid #d9e1ea5a !important;
+}
+.card-body.odd {
+  font-weight: 500 !important;
+}
+.card-body.even .even-button {
+  background-color: #01b81a !important;
+  border: 1px solid #01b81a !important;
+  color: #ffffff !important;
+}
+
+.card-body.even .even-button:hover {
+  background-color: #01b81a !important;
+  border: 1px solid #01b81a !important;
+  transform: scale(1.1) !important;
+}
+.card-body.odd .odd-button:hover {
+  background-color: #01b81a !important;
+  border: 1px solid #01b81a !important;
+  transform: scale(1.1) !important;
+}
+.bg-yellow {
+  background: #00000055 !important;
+}

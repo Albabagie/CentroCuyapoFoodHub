@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zigzag Border Receipt</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: #f0f0f0;
+        margin: 0;
+    }
+
+    .receipt {
+        width: 300px;
+        background-color: #fff;
+        border: 2px solid #ccc;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .receipt-header {
+        background-color: #f0f0f0;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .receipt-content {
+        padding: 20px;
+    }
+
+    .receipt-footer {
+        height: 20px;
+        background: linear-gradient(to right, #fff 50%, #f0f0f0 50%);
+        background-size: 20px 100%;
+    }
+</style>
+</head>
+<body>
+    <div class="receipt">
+        <div class="receipt-header">
+            <h2>Receipt</h2>
+        </div>
+        <div class="receipt-content">
+            <p><strong>Item:</strong> Widget</p>
+            <p><strong>Price:</strong> $10.00</p>
+            <p><strong>Quantity:</strong> 1</p>
+            <p><strong>Total:</strong> $10.00</p>
+        </div>
+        <div class="receipt-footer"></div>
+    </div>
+</body>
+</html>

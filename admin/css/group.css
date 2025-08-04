@@ -1,0 +1,198 @@
+.card-body .First {
+  background-color: whitesmoke;
+  color: white;
+  padding: 20px;
+  margin-bottom: 5px;
+  margin-top: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.card-body .Second {
+  background-color: whitesmoke;
+  color: white;
+  padding: 12px;
+  margin-bottom: 5px;
+  margin-top: 8px;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.card-body .Third {
+  background-color: whitesmoke;
+  color: white;
+  padding: 6px;
+  margin-bottom: 5px;
+  margin-top: 8px;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.card-body .First .counter {
+  background-color: gold;
+}
+
+.card-body .Second .counter {
+  background-color: silver;
+}
+
+.card-body .Third .counter {
+  background-color: burlywood;
+}
+#percentage_diff {
+  position: relative;
+  display: inline-block;
+}
+
+.hover-text {
+  visibility: hidden;
+  width: 150px; /* Adjust width as needed */
+  background-color: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  /* z-index: 1; */
+  top: -30px;
+  bottom: 120%;
+  left: 50%;
+  margin-left: -50px; /* Adjust to center the tooltip */
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+#percentage_diff:hover .hover-text {
+  visibility: visible;
+  opacity: 1;
+}
+.box-rating {
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.head-rating {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.ranking-item {
+  display: flex;
+  align-items: center;
+  border: 2px solid #f0f0f0;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  background-color: #f9f9f9;
+}
+
+.ranking-item:hover {
+  transform: translateY(-5px);
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 10px;
+}
+
+.ranking-badge {
+  background-color: #ffc107;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 60px;
+}
+
+.top .ranking-badge {
+  background-color: #28a745;
+}
+
+.behind .ranking-badge {
+  background-color: #17a2b8;
+}
+
+.last .ranking-badge {
+  background-color: #ffc107;
+}
+
+.ranking-details {
+  flex-grow: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.product-name {
+  color: #333;
+}
+
+.product-rating {
+  font-size: 1.2rem;
+  color: #ffbf00;
+  font-weight: bold;
+}
+
+.product-rating i {
+  margin-left: 5px;
+}
+
+.head-list {
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.banner-list {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.favorite-item {
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  padding: 5px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.favorite-item:hover {
+  transform: translateY(-5px);
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 10px;
+  border: 1px solid lightgray;
+}
+
+.counter-badge {
+  background-color: #ffc107;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 20%;
+  margin: 10px 5px;
+  padding: 5px;
+  min-width: 20px;
+  text-align: center;
+}
+
+.first-place .counter-badge {
+  background-color: #28a745;
+}
+
+.second-place .counter-badge {
+  background-color: #17a2b8;
+}
+
+.third-place .counter-badge {
+  background-color: #ff851b;
+}
+
+.product-info {
+  text-align: left;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+.product-name {
+  color: #343a40;
+}
+.product-price {
+  color: #007bff;
+}

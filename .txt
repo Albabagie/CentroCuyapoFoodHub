@@ -1,0 +1,141 @@
+ <form method="POST">
+          <div class="card-body">
+            
+          <table class="table">
+                                <thead >
+                              <tr>
+                                  <th>
+                                    <span>Category Name</span>
+                                  </th>
+                                  <th>
+                                    <span> Order Name</span>
+                                  </th>
+                                  <th>
+                                    <span>Quantity</span>
+                                  </th>
+                                  <th  class="text-center">
+                                    <span>item_price</span>
+                                  </th>
+                                  <th class="text-center">
+                                    <span>Total</span>
+                                  </th>
+                                  <th>
+                                    <span>Action</span>
+                                  </th>
+                              
+                              </tr>
+                              </thead>
+                              
+                              <tbody>
+                             
+                              <?php
+              $sql_orders = "SELECT COUNT(*) as Total_item, SUM(total_payment) as Total_payment, item.*, menu.category, SUM(total_item) as Total_qty, bag.*
+               FROM bag 
+               LEFT JOIN item ON bag.item_id = item.item_id 
+               LEFT JOIN menu ON item.category_id = menu.category_id 
+               WHERE order_status = 0 AND customer_id = '$id' AND remove_item = 0
+               GROUP BY menu.category_id, item.item_id";
+
+$totalPayment = 0;
+$order_res = $conn->query($sql_orders);
+
+if($order_res->num_rows > 0) {
+    while($row = $order_res->fetch_assoc()) {
+        $totalPayment += $row['Total_payment'];
+        $total_items = $row['Total_qty'];
+        
+        echo "<tr>
+                <td class='d-none'><input name='item_id' type='hidden' value='".$row['item_id']."'></td>
+                <td><input name='category' class='form-control border-0 bg-none' type='text' value='".$row['category']."' readonly></td>";
+        echo "<td><input name='item_name' class='form-control border-0 bg-none' type='text' value='".$row['item_name']."' readonly></td>";
+        echo "<td><input name='qty' class='form-control border-0 bg-none' type='number' value='".$row['Total_qty']."' readonly></td>";
+        echo "<td><input name='item_price' class='form-control border-0 bg-none text-center' type='number' value='".$row['item_price']."' readonly></td>";
+        echo "<td>".number_format($row['Total_payment'], 2)."</td>";
+        echo "<td>
+                <form method='POST'>
+                    <input type='hidden' value='".$row['bag_id']."' name='bag_id'>
+                    <button type='submit' name='remove' class='btn btn-square'><i class='uil uil-trash text-danger'></i></button>
+                </form>
+            </td>";
+        echo "</tr>";
+    }
+} else {
+    echo ''; // Not sure why you have an empty echo statement here
+}
+?>
+
+
+              
+    </tbody>
+    
+    <div class="col-md-8">
+      <tr class="col-md-12 border border-bottom border-dark">
+
+      </tr>
+      <tr>
+        <th class="text-center">Total</th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th class="text-center">
+        <input name="total_payment" class="form-control border-0 bg-none text-center" type="number" value="
+          <?php
+          echo $totalPayment;
+          ?>
+          "/>
+        </th>
+        <th></th>
+      </tr>
+    </div>
+              
+  </table>
+  <?php 
+         if($totalPayment  == 0 ){
+          echo '<div class="card-footer d-flex justify-content-end mx-md-3">
+          <button class="btn btn-gray w-50" disabled>Check Out</button>
+        </div>';
+         }
+         else{
+          echo '<div class="card-footer d-flex justify-content-end mx-md-3">
+          <button type="submit" name="checkout" class="btn btn-primary w-50">Check Out</button>
+        </div>';
+         }
+          
+?>
+          </div>
+        </form>
+
+        </div>
+
+
+        // const quantityInputs = document.querySelectorAll('.quantity_input');
+  // const priceInputs = document.querySelectorAll('.price_input');
+  // const totalElement = document.getElementById('total_price');
+
+  // quantityInputs.forEach((input, index) => {
+  //   input.addEventListener('change', () => {
+  //     const quantity = parseInt(input.value);
+  //     const price = parseFloat(input.dataset.price);
+  //     const totalPrice = quantity * price;
+  //     priceInputs[index].value = totalPrice.toFixed(2);
+  //     calculateTotal();
+  //   });
+  // });
+
+  // function calculateTotal() {
+  //   let total = 0;
+  //   priceInputs.forEach(input => {
+  //     total += parseFloat(input.value);
+  //   });
+  //   totalElement.textContent = total.toFixed(2);
+  // }
+
+  // calculateTotal();
+
+
+  color: 
+  side-bar : rgb(35,35,35)
+  card: rgb(248,239,212)
+  content-bg: rgb(252,250,241)
+  btn-bg: rgb(19, 39, 67)
+  
